@@ -67,8 +67,7 @@
 
         .logo-container{
             padding: 30px 100px;
-            background-color: #FFB966 ;
-            clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+            /* background-color: #FFB966 ; */
 
         }
         .footer-ul{
@@ -89,10 +88,16 @@
             }
             .logo-container{
                 background-color: transparent;
-                padding: 10px 20px;
+                padding: 16px 20px;
             }
             .footer-ul{
                 font-size: 16px;
+            }
+        }
+
+        @media(min-width:641px) and (max-width:1023px) {
+            .logo-container{
+                padding: 20px 30px;
             }
         }
 
@@ -107,7 +112,7 @@
         <div class=" flex items-center justify-between ">
             <div class="logo-container">
             <a href="./index.html">
-                <img src="./Logo_Dark.svg" class="h-full w-full" alt="Surancy Logo">
+                <span class="text-2xl lg:text-4xl heading text-white lg:text-primary font-bold">Invoercalculator.nl</span>
             </a>
         </div>
             <!-- desktop navbar -->
@@ -133,7 +138,7 @@
 
             <!-- mobile navbar -->
             <nav id="mobile-nav"
-                class="fixed z-[99] p-4 bg-primary lg:bg-white  inset-x-0 top-20 h-1/2  transform -translate-x-full transition-transform duration-300 lg:hidden flex flex-col gap-5 justify-start items-center text-2xl text-white lg:text-lg">
+                class="fixed z-[99] p-4 bg-primary lg:bg-white  inset-x-0 md:top-16 top-14 lg:top-20 h-1/2  transform -translate-x-full transition-transform duration-300 lg:hidden flex flex-col gap-5 justify-start items-center text-2xl text-white lg:text-lg">
                 <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold" href="./index.html">Home
                 </a>
            <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold mr-5"
@@ -406,7 +411,7 @@
     <footer class="grid grid-cols-1 lg:grid-cols-3 bg-[#193B1E] px-4 lg:px-[10%] py-10">
 
         <div>
-            <h3 class="text-2xl lg:text-4xl heading text-white mb-5">Quick Link</h3>
+            <h3 class="text-2xl lg:text-4xl heading text-white mb-5 font-bold">Quick Link</h3>
             <ul class="footer-ul">
                     <li>
                         <a href="">Home</a>
@@ -433,14 +438,14 @@
         </div>
 
         <div class="flex flex-col gap-5 mt-5 lg:mt-0">
-            <h3 class="text-2xl lg:text-4xl text-white heading">Contact</h3>
+            <h3 class="text-2xl lg:text-4xl text-white heading font-bold">Contact</h3>
             <a target="_blank" class="text-white text-base lg:text-xl" href="https://www.google.com/maps">741 New South Head Rd, Triple Bay <br> SWFW 3148, New York</a>
             <a class="text-white text-base lg:text-xl" href="mailto:email@company.com">email@company.com</a>
             <a class="text-primary text-base lg:text-xl" href="tel:+012345688"> +000 (123) 456 88 </a>
         </div>
 
         <div class="mt-10 lg:mt-0">
-            <h3 class="text-2xl lg:text-4xl text-white heading mb-5">Newsletter Subscribe</h3>
+            <h3 class="text-2xl lg:text-4xl text-white heading mb-5 font-bold">Newsletter Subscribe</h3>
             <div class="flex items-center bg-primary hover:bg-[#193B1E] duration-200">
             <input type="email" placeholder="Email Address"class="p-3 lg:p-6  lg:placeholder:text-xl w-full" >
             <div class="w-[80px] rotate-45 h-10 flex items-center justify-center">
