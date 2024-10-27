@@ -65,17 +65,43 @@
             font-size: 18px;
         }
 
-        .logo-container{
+        .logo-container {
             padding: 30px 100px;
             /* background-color: #FFB966 ; */
 
         }
-        .footer-ul{
+
+        .footer-ul {
             color: white;
             display: grid;
-            grid-template-columns: repeat(2,1fr);
+            grid-template-columns: repeat(4, 1fr);
             font-size: 20px;
             line-height: 3rem;
+        }
+
+        .footer-ul li {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .footer-ul li{
+                width: fit-content;
+                height: fit-content;
+            }
+
+        .footer-ul li::after {
+            content: "";
+            position: absolute;
+            background-color: #FFB966;
+            height: 2px;
+            width: 0%;
+            left: 0;
+            bottom: 0;
+            transition: width 0.5s;
+        }
+
+        .footer-ul li:hover::after {
+            width: 100%;
         }
 
         @media (max-width:640px) {
@@ -86,51 +112,61 @@
             .text-content {
                 font-size: 16px;
             }
-            .logo-container{
+
+            .logo-container {
                 background-color: transparent;
                 padding: 16px 20px;
             }
-            .footer-ul{
+
+            .footer-ul {
                 font-size: 16px;
+                grid-template-columns: repeat(1,1fr);
             }
+          
         }
 
         @media(min-width:641px) and (max-width:1023px) {
-            .logo-container{
+            .logo-container {
                 padding: 20px 30px;
             }
         }
-
     </style>
 
 </head>
 
 <body>
- 
+
     <header class="fixed top-0 w-full z-[100] bg-primary lg:bg-white shadow-md">
 
         <div class=" flex items-center justify-between ">
             <div class="logo-container">
-            <a href="./index.html">
-                <span class="text-2xl lg:text-4xl heading text-white lg:text-primary font-bold">Invoercalculator.nl</span>
-            </a>
-        </div>
+                <a href="./index.html">
+                    <span
+                        class="text-2xl lg:text-4xl heading text-white lg:text-primary font-bold">Invoercalculator.nl</span>
+                </a>
+            </div>
             <!-- desktop navbar -->
             <nav class="desktop-menu text-black hidden lg:flex gap-5 items-center px-[50px]">
-                <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold" href="./index.html">Home
-                     </a>
+                <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold"
+                    href="./index.html">Home
+                </a>
                 <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold mr-5"
                     href="./index.html">Calculator</a>
-                <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold" href="#how-it-works">How it works</a>
-                <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold mr-5" href="#About us">About us</a>
+                <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold"
+                    href="#how-it-works">How it works</a>
+                <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold mr-5"
+                    href="#About us">About us</a>
                 <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold mr-5"
                     href="#faq">FAQ</a>
-                <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold mr-5" href="#blog">Blog</a>
-                <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold mr-5" href="#contact">Contact</a>
-                
+                <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold mr-5"
+                    href="#blog">Blog</a>
+                <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold mr-5"
+                    href="#contact">Contact</a>
+
             </nav>
 
-            <button id="hamburger" aria-label="Mobile Menu" class="lg:hidden flex flex-col gap-1.5 relative z-[100] pr-4">
+            <button id="hamburger" aria-label="Mobile Menu"
+                class="lg:hidden flex flex-col gap-1.5 relative z-[100] pr-4">
                 <span class="w-6 h-0.5 bg-black active transition-all duration-300"></span>
                 <span class="w-6 h-0.5 bg-black transition-all duration-300"></span>
                 <span class="w-6 h-0.5 bg-black transition-all duration-300"></span>
@@ -139,22 +175,28 @@
             <!-- mobile navbar -->
             <nav id="mobile-nav"
                 class="fixed z-[99] p-4 bg-primary lg:bg-white  inset-x-0 md:top-16 top-14 lg:top-20 h-1/2  transform -translate-x-full transition-transform duration-300 lg:hidden flex flex-col gap-5 justify-start items-center text-2xl text-white lg:text-lg">
-                <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold" href="./index.html">Home
+                <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold"
+                    href="./index.html">Home
                 </a>
-           <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold mr-5"
-               href="./index.html">Calculator</a>
-           <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold" href="#how-it-works">How it works</a>
-           <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold mr-5" href="#About us">About us</a>
-           <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold mr-5"
-               href="#faq">FAQ</a>
-           <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold mr-5" href="#blog">Blog</a>
-           <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold mr-5" href="#contact">Contact</a>
+                <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold mr-5"
+                    href="./index.html">Calculator</a>
+                <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold"
+                    href="#how-it-works">How it works</a>
+                <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold mr-5"
+                    href="#About us">About us</a>
+                <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold mr-5"
+                    href="#faq">FAQ</a>
+                <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold mr-5"
+                    href="#blog">Blog</a>
+                <a class="hover:scale-[1.05] hover:text-primary duration-200 ease text-xl font-semibold mr-5"
+                    href="#contact">Contact</a>
             </nav>
         </div>
     </header>
 
 
-    <main class="bg-white flex flex-col lg:flex-row items-start justify-center min-h-screen p-4 mt-24 lg:px-[10%] gap-10">
+    <main
+        class="bg-white flex flex-col lg:flex-row items-start justify-center min-h-screen p-4 mt-24 lg:px-[10%] gap-10">
 
         <div class="w-full lg:w-1/2 lg:sticky top-24 p-6 bg-white rounded-lg shadow-xl">
             <h1 class="heading text-4xl text-primary font-semibold mb-6 text-center">Calculator</h1>
@@ -408,69 +450,58 @@
         </div>
     </main>
 
-    <footer class="grid grid-cols-1 lg:grid-cols-3 bg-[#193B1E] px-4 lg:px-[10%] py-10">
+    <footer class="flex flex-col bg-[#193B1E] px-4 lg:px-[10%] py-10">
 
         <div>
             <h3 class="text-2xl lg:text-4xl heading text-white mb-5 font-bold">Quick Link</h3>
             <ul class="footer-ul">
-                    <li>
-                        <a href="">Home</a>
-                    </li>
-                    <li>
-                        <a href="">Calculator</a>
-                    </li>
-                    <li>
-                        <a href="">About us</a>
-                    </li>
-                    <li>
-                        <a href="">How it works</a>
-                    </li>
-                    <li>
-                        <a href="">FAQ</a>
-                    </li>
-                    <li>
-                        <a href="">Blog</a>
-                    </li>
-                    <li>
-                        <a href="">Contact</a>
-                    </li>
+                <li>
+                    <a target="_blank" href="http://www.invoercalculator.nl/algemene-voorwaarden">Algemene
+                        voorwaarden</a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://www.invoercalculator.nl/privacy-policy">Privacy Policy</a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://www.invoercalculator.nl/over-ons">Over Invoercalculator.nl</a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://www.invoercalculator.nl/invoeren-importeren-uit-china">Invoeren uit
+                        China</a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://www.invoercalculator.nl/invoeren-uit-rusland">Invoeren uit
+                        Rusland</a>
+                </li>
+                <li>
+                    <a target="_blank"
+                        href="http://www.invoercalculator.nl/importeren-uit-de-verenigde-staten-vs-usa">Importeren uit
+                        de Verenigde Staten</a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://www.invoercalculator.nl/online-producten-kopen-in-hong-kong">Online
+                        producten kopen in Hong Kong</a>
+                </li>
+
+                <li>
+                    <a target="_blank" href="http://www.invoercalculator.nl/invoeren-uit-turkije">Invoeren uit
+                        Turkije</a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://www.invoercalculator.nl/nederland-en-belgie">Nederland en Belgie</a>
+                </li>
+                <li>
+                    <a target="_blank" href="http://www.invoercalculator.nl/importheffingen">Importheffingen</a>
+                </li>
+                <li>
+                    <a target="_blank"
+                        href="http://www.invoercalculator.nl/importeren-van-producten-buiten-de-europese-unie-eu">Importeren
+                        van producten buiten de Europese Unie (EU)</a>
+                </li>
             </ul>
         </div>
 
-        <div class="flex flex-col gap-5 mt-5 lg:mt-0">
-            <h3 class="text-2xl lg:text-4xl text-white heading font-bold">Contact</h3>
-            <a target="_blank" class="text-white text-base lg:text-xl" href="https://www.google.com/maps">741 New South Head Rd, Triple Bay <br> SWFW 3148, New York</a>
-            <a class="text-white text-base lg:text-xl" href="mailto:email@company.com">email@company.com</a>
-            <a class="text-primary text-base lg:text-xl" href="tel:+012345688"> +000 (123) 456 88 </a>
-        </div>
 
-        <div class="mt-10 lg:mt-0">
-            <h3 class="text-2xl lg:text-4xl text-white heading mb-5 font-bold">Newsletter Subscribe</h3>
-            <div class="flex items-center bg-primary hover:bg-[#193B1E] duration-200">
-            <input type="email" placeholder="Email Address"class="p-3 lg:p-6  lg:placeholder:text-xl w-full" >
-            <div class="w-[80px] rotate-45 h-10 flex items-center justify-center cursor-pointer">
-                <svg class="w-[25px] h-[25px] lg:w-[40px] lg:h-[40px]" data-name="1-Arrow Up" fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="m26.71 10.29-10-10a1 1 0 0 0-1.41 0l-10 10 1.41 1.41L15 3.41V32h2V3.41l8.29 8.29z"/></svg>
-            </div>
-        </div>
-        <div class="mt-3 flex items-center  gap-5">
-            <h4 class="heading text-2xl text-white">Follow us</h4>
-            <div class="flex gap-2">
-                <a href="" class="facebook">
-                    <svg fill="#fff" class="w-[20px] h-[20px] hover:fill-primary duration-200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" stroke="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="7935ec95c421cee6d86eb22ecd11b7e3"> <path style="display: inline;" d="M283.122,122.174c0,5.24,0,22.319,0,46.583h83.424l-9.045,74.367h-74.379 c0,114.688,0,268.375,0,268.375h-98.726c0,0,0-151.653,0-268.375h-51.443v-74.367h51.443c0-29.492,0-50.463,0-56.302 c0-27.82-2.096-41.02,9.725-62.578C205.948,28.32,239.308-0.174,297.007,0.512c57.713,0.711,82.04,6.263,82.04,6.263 l-12.501,79.257c0,0-36.853-9.731-54.942-6.263C293.539,83.238,283.122,94.366,283.122,122.174z"> </path> </g> </g></svg>
-                </a>
-                
-                <a href="" class="twitter">
-                    <svg class="w-[25px] h-[25px] hover:fill-primary duration-200" fill="#fff" viewBox="-4 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>twitter</title> <path d="M24 8.531c-0.688 1-1.5 1.844-2.469 2.563 0.031 0.219 0.031 0.438 0.031 0.656 0 6.5-4.938 14-14 14-2.781 0-5.375-0.844-7.563-2.219 0.375 0.031 0.781 0.094 1.188 0.094 2.313 0 4.406-0.813 6.094-2.125-2.188-0.031-3.969-1.5-4.594-3.438 0.281 0.063 0.625 0.094 0.938 0.094 0.438 0 0.906-0.063 1.313-0.188-2.281-0.438-3.969-2.406-3.969-4.781v-0.063c0.688 0.344 1.406 0.563 2.219 0.594-1.313-0.906-2.188-2.406-2.188-4.094 0-0.906 0.25-1.75 0.656-2.5 2.438 2.969 6.063 4.969 10.156 5.156-0.063-0.344-0.125-0.75-0.125-1.125 0-2.719 2.188-4.938 4.906-4.938 1.438 0 2.719 0.625 3.625 1.594 1.125-0.219 2.156-0.656 3.094-1.219-0.344 1.156-1.125 2.156-2.125 2.75 1-0.125 1.906-0.406 2.813-0.813z"></path> </g></svg>
-                </a>
-                <a href="" class="linkedin">
-                    <svg fill="#fff" class="w-[20px] h-[20px] hover:fill-primary duration-200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" stroke="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="7935ec95c421cee6d86eb22ecd125aef"> <path style="display: inline; fill-rule: evenodd; clip-rule: evenodd;" d="M116.504,500.219V170.654H6.975v329.564H116.504 L116.504,500.219z M61.751,125.674c38.183,0,61.968-25.328,61.968-56.953c-0.722-32.328-23.785-56.941-61.252-56.941 C24.994,11.781,0.5,36.394,0.5,68.722c0,31.625,23.772,56.953,60.53,56.953H61.751L61.751,125.674z M177.124,500.219 c0,0,1.437-298.643,0-329.564H286.67v47.794h-0.727c14.404-22.49,40.354-55.533,99.44-55.533 c72.085,0,126.116,47.103,126.116,148.333v188.971H401.971V323.912c0-44.301-15.848-74.531-55.497-74.531 c-30.254,0-48.284,20.38-56.202,40.08c-2.897,7.012-3.602,16.861-3.602,26.711v184.047H177.124L177.124,500.219z"> </path> </g> </g></svg>
-                </a>
-                <a href="" class="instagram">
-                    <svg fill="#fff" class="w-[25px] h-[25px] hover:fill-primary duration-200" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" stroke="#fff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M20.445 5h-8.891A6.559 6.559 0 0 0 5 11.554v8.891A6.559 6.559 0 0 0 11.554 27h8.891a6.56 6.56 0 0 0 6.554-6.555v-8.891A6.557 6.557 0 0 0 20.445 5zm4.342 15.445a4.343 4.343 0 0 1-4.342 4.342h-8.891a4.341 4.341 0 0 1-4.341-4.342v-8.891a4.34 4.34 0 0 1 4.341-4.341h8.891a4.342 4.342 0 0 1 4.341 4.341l.001 8.891z"></path><path d="M16 10.312c-3.138 0-5.688 2.551-5.688 5.688s2.551 5.688 5.688 5.688 5.688-2.551 5.688-5.688-2.55-5.688-5.688-5.688zm0 9.163a3.475 3.475 0 1 1-.001-6.95 3.475 3.475 0 0 1 .001 6.95zM21.7 8.991a1.363 1.363 0 1 1-1.364 1.364c0-.752.51-1.364 1.364-1.364z"></path></g></svg>
-                </a>
-             
-            </div>
-        </div>
         </div>
     </footer>
 
